@@ -214,8 +214,8 @@ const escapeString = (str) => {
 
 mainNews.forEach(item => {
     const template = document.createElement('template');
-    const categoryData = data.categories.find((categoryItem => categoryItem.id == item.category_id));
-    const sourceData = data.sources.find((sourceItem) => sourceItem.id == item.source_id);
+    const categoryData = data.categories.find((categoryItem => categoryItem.id === item.category_id));
+    const sourceData = data.sources.find((sourceItem) => sourceItem.id === item.source_id);
 
     template.innerHTML = `
 <article class="main-article">
@@ -236,7 +236,7 @@ mainNews.forEach(item => {
 
 smallNews.forEach(item => {
     const template = document.createElement('template');
-    const sourceData = data.sources.find((sourceItem) => sourceItem.id == item.source_id);
+    const sourceData = data.sources.find((sourceItem) => sourceItem.id === item.source_id);
     const dateData = new Date(item.date).toLocaleDateString('ru-RU', {month: 'long', day: 'numeric'});
 
     template.innerHTML = `
